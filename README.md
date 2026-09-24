@@ -1,5 +1,8 @@
 # 🚗 Smart Vehicle System
 
+![Tests](https://github.com/clr-techlead/SmartVehicleSystemV2/actions/workflows/tests.yml/badge.svg)
+![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
+
 **Autor:** Camilo Andrés León Rubriche
 **Institución:** Universidad Nacional Abierta y a Distancia — UNAD
 **Curso:** Programación
@@ -24,6 +27,15 @@ python Ejercicio_1.py
 
 Requisitos: Python 3.10+ (usa únicamente la librería estándar — `tkinter`, `logging`).
 
+## Pruebas
+
+```bash
+pip install -r requirements.txt
+pytest tests/ -v
+```
+
+23 pruebas unitarias cubren la clase base `Vehiculo`, cada subclase (`AutoElectrico`, `Moto`, `Camion`), el polimorfismo en `acelerar()` y el controlador `SistemaVehiculos` (agregar/eliminar/simular flota). Se ejecutan automáticamente en cada push vía GitHub Actions (ver badge arriba).
+
 ## Características
 
 - Clase base `Vehiculo` con herencia hacia `AutoElectrico`, `Moto` y `Camion`
@@ -38,9 +50,15 @@ Requisitos: Python 3.10+ (usa únicamente la librería estándar — `tkinter`, 
 ```
 SmartVehicleSystemV2/
 │
-├── Ejercicio_1.py         # Aplicación completa: modelos, herencia/polimorfismo y UI (Tkinter)
-├── vehicle_log.txt          # Log de eventos (se genera en ejecución)
-└── simulation_report.txt     # Reporte exportado de la última simulación (se genera en ejecución)
+├── Ejercicio_1.py             # Aplicación completa: modelos, herencia/polimorfismo y UI (Tkinter)
+├── tests/
+│   └── test_vehiculos.py       # Pruebas unitarias (pytest)
+├── .github/workflows/
+│   └── tests.yml                # CI: corre las pruebas en cada push
+├── requirements.txt
+├── LICENSE
+├── vehicle_log.txt               # Log de eventos (se genera en ejecución)
+└── simulation_report.txt          # Reporte exportado de la última simulación (se genera en ejecución)
 ```
 
 ## Tecnologías

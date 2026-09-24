@@ -1,0 +1,4 @@
+# Smart Vehicle System
+# La aplicación en sí solo usa la librería estándar de Python
+# (tkinter, logging). Estas dependencias son solo para desarrollo y pruebas.
+pytest>=8.0.0
