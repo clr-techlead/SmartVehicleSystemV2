@@ -1,68 +1,70 @@
+🌐 English | [Versión en español](README.es.md)
+
 # 🚗 Smart Vehicle System
 
 ![Tests](https://github.com/clr-techlead/SmartVehicleSystemV2/actions/workflows/tests.yml/badge.svg)
 ![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 
-**Autor:** Camilo Andrés León Rubriche
-**Institución:** Universidad Nacional Abierta y a Distancia — UNAD
-**Curso:** Programación
+**Author:** Camilo Andrés León Rubriche
+**Institution:** Universidad Nacional Abierta y a Distancia — UNAD
+**Course:** Programming
 
-> Simulador de flota de vehículos con interfaz gráfica, construido en Python aplicando herencia, polimorfismo y sobrecarga de métodos.
+> Vehicle fleet simulator with a graphical interface, built in Python applying inheritance, polymorphism, and method overloading.
 
-## Descripción
+## Overview
 
-Sistema que simula distintos tipos de vehículos (auto eléctrico, moto, camión) aplicando conceptos de Programación Orientada a Objetos: herencia, polimorfismo y sobrecarga de métodos. Incluye una interfaz gráfica construida con Tkinter donde se arma una flota y se corre una simulación de aceleración según el terreno y el modo turbo.
+A system that simulates different types of vehicles (electric car, motorcycle, truck) applying Object-Oriented Programming concepts: inheritance, polymorphism, and method overloading. It includes a Tkinter GUI where a fleet is built and an acceleration simulation is run based on terrain and turbo mode.
 
-## Capturas de pantalla
+## Screenshots
 
-| Salida de la simulación | Tabla de flota |
+| Simulation output | Fleet table |
 |---|---|
-| ![Salida de simulación con velocidad y batería](docs/screenshots/01_simulation_output.png) | ![Tabla de flota con tipo, marca, modelo y velocidad](docs/screenshots/02_fleet_table.png) |
+| ![Simulation output with speed and battery](docs/screenshots/01_simulation_output.png) | ![Fleet table with type, brand, model, and speed](docs/screenshots/02_fleet_table.png) |
 
-## Ejecución
+## Running it
 
 ```bash
 python Ejercicio_1.py
 ```
 
-Requisitos: Python 3.10+ (usa únicamente la librería estándar — `tkinter`, `logging`).
+Requirements: Python 3.10+ (uses only the standard library — `tkinter`, `logging`).
 
-## Pruebas
+## Tests
 
 ```bash
 pip install -r requirements.txt
 pytest tests/ -v
 ```
 
-23 pruebas unitarias cubren la clase base `Vehiculo`, cada subclase (`AutoElectrico`, `Moto`, `Camion`), el polimorfismo en `acelerar()` y el controlador `SistemaVehiculos` (agregar/eliminar/simular flota). Se ejecutan automáticamente en cada push vía GitHub Actions (ver badge arriba).
+23 unit tests cover the base `Vehiculo` class, each subclass (`AutoElectrico`, `Moto`, `Camion`), polymorphism in `acelerar()`, and the `SistemaVehiculos` controller (add/remove/simulate fleet). They run automatically on every push via GitHub Actions (see badge above).
 
-## Características
+## Features
 
-- Clase base `Vehiculo` con herencia hacia `AutoElectrico`, `Moto` y `Camion`
-- Polimorfismo en el método `acelerar()` según el tipo de vehículo
-- Sobrecarga simulada de `acelerar()` mediante parámetros opcionales (`turbo`, `terrain`)
-- Interfaz gráfica con tema oscuro (Tkinter + ttk)
-- Registro de eventos en `vehicle_log.txt`
-- Exportación de resultados de simulación a `simulation_report.txt`
+- Base class `Vehiculo` with inheritance to `AutoElectrico`, `Moto`, and `Camion`
+- Polymorphism in the `acelerar()` (accelerate) method depending on vehicle type
+- Simulated overloading of `acelerar()` via optional parameters (`turbo`, `terrain`)
+- Dark-themed GUI (Tkinter + ttk)
+- Event logging to `vehicle_log.txt`
+- Simulation results exported to `simulation_report.txt`
 
-## Arquitectura
+## Architecture
 
 ```
 SmartVehicleSystemV2/
 │
-├── Ejercicio_1.py             # Aplicación completa: modelos, herencia/polimorfismo y UI (Tkinter)
+├── Ejercicio_1.py             # Full application: models, inheritance/polymorphism, and UI (Tkinter)
 ├── tests/
-│   └── test_vehiculos.py       # Pruebas unitarias (pytest)
+│   └── test_vehiculos.py       # Unit tests (pytest)
 ├── .github/workflows/
-│   └── tests.yml                # CI: corre las pruebas en cada push
+│   └── tests.yml                # CI: runs the tests on every push
 ├── requirements.txt
 ├── LICENSE
-├── vehicle_log.txt               # Log de eventos (se genera en ejecución)
-└── simulation_report.txt          # Reporte exportado de la última simulación (se genera en ejecución)
+├── vehicle_log.txt               # Event log (generated at runtime)
+└── simulation_report.txt          # Latest simulation report (generated at runtime)
 ```
 
-## Tecnologías
+## Technologies
 
 - Python 3
-- tkinter / ttk — interfaz gráfica
-- logging — registro de eventos
+- tkinter / ttk — GUI
+- logging — event logging
